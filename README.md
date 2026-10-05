@@ -12,10 +12,19 @@ OI 出题工作台 —— DeepSeek Harness 的 **skill-first 插件**：核心�
 ## 安装
 
 ```bash
-dsh plugin --profile web add dsh-oi-workbench
+dsh plugin --profile desktop add dsh-oi-workbench
 # 或 GitHub 仓库方式：
-# dsh plugin --profile web add github:your-name/dsh-oi-workbench
+# dsh plugin --profile desktop add github:your-name/dsh-oi-workbench
+# 或本机源码目录（必须是绝对路径）：
+# dsh plugin --profile desktop add "C:\Users\<你>\dsh-oi-workbench"
 ```
+
+> `--profile` 必须与当前运行的 DSH 实例一致。桌面端实例使用 `desktop` profile
+> （`C:\Users\<你>\.dsh\profiles\desktop`）；只有 `dsh web` 起的实例才用 `web`。
+> 装错 profile 时插件会显示为「已安装」但技能与命令都不出现。
+
+运行时版本要求：DSH `0.2.0-rc.2`，对应 `@etby-studio/dsh-commands@^0.2.0`。
+若 DSH 为 `0.1.0-rc.5` 或更早版本，则需改回 `@etby-studio/dsh-commands@^0.1.0`。
 
 安装后**重启 DeepSeek Harness** 生效。
 
